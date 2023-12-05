@@ -91,4 +91,65 @@ We welcome contributions from the community. If you would like to contribute to 
 5. Commit your changes and create a pull request, explaining the purpose and scope of your contribution.
 
 ## License
-This project is licensed under the [MIT License](LICENSE). Feel free to use, modify, and distribute this code for personal or commercial purposes.
+This project is licensed under the [MIT License](LICENSE). Feel free to use, modify, and distribute this code for personal or commercial purposes. 
+
+## JIRA KAN-91 Update
+<h1>Expense Approval Smart Contract</h1>
+<h2>Introduction</h2>
+<p>This document explains the Expense Approval smart contract, designed to automate approval workflows in a decentralized Expense Management system. It allows users to submit, approve, reject, or escalate expense requests. The smart contract is implemented in Solidity for Ethereum blockchain.</p>
+
+<h2>Design Highlights</h2>
+<ul>
+<li><code>Expense</code> struct: Represents an expense request, includes amount, submitter, approver, and current status.</li>
+<li><code>expenses</code> mapping: Stores expense requests with expense ID as key.</li>
+<li><code>Status</code> enum: Defines expense request statuses (Pending, Approved, Rejected, Escalated).</li>
+</ul>
+
+<h2>Functions</h2>
+<ul>
+<li><code>submitExpense</code>: Submits a request, generates expense ID, sets status to Pending.</li>
+<li><code>approveExpense</code>: Allows the approver to mark an expense as Approved.</li>
+<li><code>rejectExpense</code>: Allows the approver to mark an expense as Rejected.</li>
+<li><code>escalateExpense</code>: Allows the submitter to escalate an expense request.</li>
+</ul>
+
+<h2>Modifiers</h2>
+<ul>
+<li><code>onlySubmittedBy</code>: Ensures functions can only be called by the submitter.</li>
+<li><code>onlyApprovedBy</code>: Ensures functions can only be called by the approver.</li>
+</ul>
+
+<h2>Events</h2>
+<ul>
+<li><code>ExpenseSubmitted</code>: Emits when a new expense request is submitted.</li>
+<li><code>ExpenseApproved</code>: Emits when an expense request is approved.</li>
+<li><code>ExpenseRejected</code>: Emits when an expense request is rejected.</li>
+<li><code>ExpenseEscalated</code>: Emits when an expense request is escalated.</li>
+</ul>
+
+<h2>Stakeholders</h2>
+<table width="100%" cellspacing="0" cellpadding="0" border="1">
+    <thead>
+        <tr>
+            <th>Role</th>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Submitter</td>
+            <td>Ioana Dev</td>
+        </tr>
+        <tr>
+            <td>Approver</td>
+            <td>Hakan Dev</td>
+        </tr>
+        <tr>
+            <td>Country Director</td>
+            <td>Pavel</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>&nbsp;</p>
+<p>Conclusion: The Expense Approval smart contract streamlines expense approvals in a decentralized manner. It provides transparency, immutability, and efficiency through automated workflows.</p>
